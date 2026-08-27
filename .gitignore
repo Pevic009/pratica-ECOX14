@@ -6,6 +6,8 @@
 
 # Dados: ficam apenas na sua maquina, nunca no GitHub.
 # O codigo do projeto reconstroi estes arquivos.
+dados/bronze/*
+!dados/bronze/banco_mundial/proveniencia.json
 dados/prata/*
 dados/ouro/*
 

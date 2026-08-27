@@ -39,10 +39,12 @@ def registrar(origem, destino):
         "fonte": DATASET,
         "origem": origem.name,
         "arquivo_destino": destino.name,
-        "extraido_em":date.now()
+        "extraido_em":date.now().isoformat()
     }
 
-    (BRONZE / "proveniencia.json").write_text(json.dumps(info, indent=2))
+    caminho = BRONZE/"proveniencia.jsonl"
+    with caminho.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(info, ensure_ascii=False) + "\n")
 
 def main():
     pasta = baixar()
